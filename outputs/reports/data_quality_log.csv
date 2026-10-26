@@ -1,0 +1,10 @@
+Issue,Dev rows,Validation rows,Treatment
+Corrupted posted_rate labels (2-6x off),677,-,Removed from training & clean evaluation
+Negative weight (sign error),292,145,Absolute value (pipeline)
+Missing weight,300,165,Median weight of the same equipment (learned on training folds)
+Missing market_index,374,249,Not needed: daily market index used
+market_index load-level noise / drift,all,all,Daily average + linear elasticity with trend
+quote_signal regime flips by month,all,all,Excluded from the model
+Cities only in validation,-,"1,447",Coordinates instead of city IDs
+"Weight cap 47,500 / floor 5,000; distance floor 70 mi","1,204",-,Valid business limits - kept
+December inputs lack coordinates / market data,-,31 rows,Filled from the lookup tables

@@ -1,0 +1,4 @@
+Model,Random 5-fold CV MAPE (%),Time holdout MAPE (%),Optimism (holdout / CV),Rank by random CV,Rank by time holdout
+Naive HistGB (all raw columns),1.5568708528431598,3.5202039657129545,2.2610764144529734,3,3
+HistGB + raw quote & market signals,1.2236619195334297,1.9492629429220052,1.5929750789868822,1,2
+Two-stage production model,1.5292784417306549,1.701990626479559,1.1129370427490295,2,1

@@ -1,0 +1,13 @@
+# Provided with the assessment
+matplotlib>=3.8,<4
+numpy>=1.26,<3
+pandas>=2.0,<3
+
+# Modelling notebook
+scikit-learn>=1.0,<2
+scipy>=1.9
+seaborn>=0.12
+joblib>=1.1
+
+# Running the notebook
+jupyter>=1.0

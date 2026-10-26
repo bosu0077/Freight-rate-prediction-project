@@ -1,0 +1,121 @@
+{
+  "versions": {
+    "python": "3.12.3",
+    "pandas": "2.3.3",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1"
+  },
+  "data": {
+    "dev_rows": 48000,
+    "clean_rows": 47323,
+    "label_errors": 677,
+    "validation_rows": 12000,
+    "new_validation_cities": [
+      "Allentown",
+      "Charlotte",
+      "Chicago",
+      "Jackson",
+      "Knoxville",
+      "Laredo",
+      "Norfolk",
+      "San Diego"
+    ],
+    "new_city_validation_rows": 1447
+  },
+  "split": {
+    "development": "Jan 1 - Aug 31 2025 (clean)",
+    "holdout": "Sep 1 - Oct 31 2025",
+    "dev_rows": 37944,
+    "holdout_rows": 9379
+  },
+  "best_params": {
+    "min_samples_leaf": 10.0,
+    "max_leaf_nodes": 63.0,
+    "learning_rate": 0.03,
+    "l2_regularization": 0.0,
+    "ramp_days": 30.0
+  },
+  "holdout_clean": {
+    "MAE ($)": 38.44257278748193,
+    "RMSE ($)": 55.56004618231457,
+    "MAPE (%)": 1.679951960638595,
+    "MedAPE (%)": 1.4171883221701926,
+    "R2": 0.9983678246696563,
+    "Within 5% (%)": 97.8569143831965
+  },
+  "holdout_all_labels": {
+    "MAE ($)": 94.49076352807857,
+    "RMSE ($)": 629.919099975957,
+    "MAPE (%)": 4.198864003209646,
+    "MedAPE (%)": 1.44095519167216,
+    "R2": 0.8296152672788697,
+    "Within 5% (%)": 96.37719206132522
+  },
+  "validation_strategy_check": {
+    "Naive HistGB (all raw columns)": {
+      "Random 5-fold CV MAPE (%)": 1.5568708528431598,
+      "Time holdout MAPE (%)": 3.5202039657129545,
+      "Optimism (holdout / CV)": 2.2610764144529734,
+      "Rank by random CV": 3.0,
+      "Rank by time holdout": 3.0
+    },
+    "HistGB + raw quote & market signals": {
+      "Random 5-fold CV MAPE (%)": 1.2236619195334297,
+      "Time holdout MAPE (%)": 1.9492629429220052,
+      "Optimism (holdout / CV)": 1.5929750789868822,
+      "Rank by random CV": 1.0,
+      "Rank by time holdout": 2.0
+    },
+    "Two-stage production model": {
+      "Random 5-fold CV MAPE (%)": 1.5292784417306549,
+      "Time holdout MAPE (%)": 1.701990626479559,
+      "Optimism (holdout / CV)": 1.1129370427490295,
+      "Rank by random CV": 2.0,
+      "Rank by time holdout": 1.0
+    }
+  },
+  "cold_start": {
+    "Loads touching an unseen city (MAPE %)": 1.944139087644206,
+    "Loads with known cities (MAPE %)": 1.6887803349933967
+  },
+  "holdout_bias_by_month_pct": {
+    "Oct": -0.9718841368356732,
+    "Sep": -0.2625072966954757
+  },
+  "market_level_effects_final": {
+    "Trend per 30 days (%)": 0.5941002032095133,
+    "Market-index elasticity (% rate per 1% index)": 0.15346206643098068,
+    "Quarter-end surge on the last day (%)": 3.96960111550686
+  },
+  "december": {
+    "min": 818.38,
+    "max": 883.59,
+    "mean": 851.2951612903227
+  },
+  "lane_history": {
+    "n": 21,
+    "median": 807.89,
+    "min": 757.93,
+    "max": 934.37,
+    "median_distance": 362.5
+  },
+  "quote_signal_label_free_corr": {
+    "2025-01": 0.9883100846907861,
+    "2025-02": 0.9879244436309802,
+    "2025-03": 0.9877997782521897,
+    "2025-04": -0.9837905742095574,
+    "2025-05": -0.9856591952858388,
+    "2025-06": 0.9877093397184907,
+    "2025-07": -0.985095306614491,
+    "2025-08": -0.02196768599613347,
+    "2025-09": 0.9874248824301307,
+    "2025-10": -0.9853304933437332,
+    "2025-11": -0.0010376474266410476,
+    "2025-12": -0.012892469030049564
+  },
+  "validation_predictions": {
+    "rows": 12000,
+    "mean": 2396.2678800000003,
+    "median": 2076.37
+  }
+}
